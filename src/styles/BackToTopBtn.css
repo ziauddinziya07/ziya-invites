@@ -1,0 +1,36 @@
+.back-to-top-btn {
+    padding: 3px 10px 7px;
+    background: none;
+    border: none;
+
+    visibility: hidden;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #002c6a;
+    color: white;
+    transition: all 0.4s ease-in-out;
+}
+
+.back-to-top-btn:hover {
+    cursor: pointer;
+}
+
+.back-to-top-btn:focus {
+    border: none;
+    outline: none;
+}
+
+.back-to-top-btn .icon {
+    color: white;
+    width: 10px;
+}
+
+.active {
+    visibility: visible;
+    opacity: 1;
+}

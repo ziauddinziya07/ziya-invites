@@ -1,0 +1,122 @@
+.navbar {
+    padding: 15px 5%;
+    transition: all 0.5s;
+}
+
+.navbar-brand {
+    padding: 0px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+}
+
+.nav-bg {
+    background-color: #002c6ada;
+}
+
+/* Navbar Toggler Button */
+.navbar-toggler {
+    padding: 0px;
+    border: none;
+}
+
+.navbar-toggler-icon:hover {
+    color: #47b2e4;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    font-size: 15px;
+    color: white;
+}
+
+.xmark {
+    position: fixed;
+    top: 30px;
+    right: 15px;
+}
+
+.xmark:hover {
+    animation: rotate 400ms linear 1;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+/* Navigation links laptop view */
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    transition: all 400ms linear;
+    padding: 0px;
+    margin-left: 1rem;
+}
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item .nav-link:hover {
+    color: #47b2e4;
+}
+
+/* Navigation Bar Mobile View */
+.full-scrn-nav {
+    display: none;
+    background-color: #002c6aa8;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    padding: 15px;
+    padding-top: 65px;
+    transition: all ease-in 1s;
+}
+
+.full-scrn-nav-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.full-scrn-nav-content ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.full-scrn-nav-content ul li {
+    margin: 0px 20px 10px;
+}
+
+.full-scrn-nav-content ul li a {
+    text-decoration: none;
+    color: #002c6a;
+    font-weight: 500;
+    transition: all 400ms linear;
+}
+
+.full-scrn-nav-content ul li a:hover,
+.full-scrn-nav-content ul li.active a {
+    color: #47b2e4;
+}
+
+@media (min-width: 992px) {
+    #menu-btn {
+        visibility: hidden;
+    }
+}
+
+/* New Mobile Phones Wide Screens */
+@media (max-width: 428px) {
+    .navbar {
+        padding: 15px 7%;
+    }
+    .navbar-brand {
+        line-height: 1;
+    }
+}

@@ -1,0 +1,123 @@
+#portfolio {
+    padding: 5% calc(5% - 20px);
+    box-shadow: 0px 2px 10px 0px rgba(128, 128, 128, 0.492);
+    text-align: center;
+}
+
+.portfolio-title h2 {
+    color: #002c6a;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+.portfolio-title h2::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 3px;
+    bottom: -15px;
+    left: calc(50% - 20px);
+    background-color: #47b2e4;
+}
+
+.portfolio-title h2::before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 120px;
+    height: 1px;
+    top: 55px;
+    left: calc(50% - 60px);
+    background-color: #ddd;
+}
+
+.portfolio-title p {
+    text-align: justify;
+    text-align-last: center;
+    margin: 0px;
+    padding: 0px 20px;
+}
+
+.portfolio-item {
+    padding: 0px 20px;
+    margin-top: 5%;
+}
+
+.portfolio-item .prtfolio-item-wrapper {
+    border: 2px solid black;
+}
+
+.portfolio-item img {
+    width: 100%;
+    /* box-shadow: 0px 2px 10px 0px rgba(255, 255, 255, 0.546); */
+}
+
+.portfolio-item h6 {
+    padding: 0.5rem 0px;
+    margin-bottom: 0px;
+    /* background-color: white;
+    color: #002c6a; */
+    color: white;
+    background-color: #002c6a;
+    position: relative;
+    z-index: -1;
+}
+
+#portfolio .btn {
+    margin-top: 5%;
+    color: white;
+    background-color: #002c6a;
+    width: 120px;
+    height: 42px;
+}
+
+#portfolio .btn:hover {
+    color: #002c6a;
+    background-color: white;
+    font-weight: 600;
+    border: 2px solid #002c6a;
+}
+
+
+
+/* Tablet Wide Screens */
+@media (max-width: 992px) {
+}
+
+/* New Mobile Phones Wide Screens */
+@media (max-width: 428px) {
+    #portfolio {
+        padding: 7%;
+    }
+
+    .portfolio-item {
+        padding: 0px;
+    }
+
+    .portfolio-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .portfolio-title h2::before {
+        top: 46px;
+    }
+
+    .portfolio-title p {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .portfolio-item {
+        margin-top: 7%;
+    }
+
+    #portfolio .btn {
+        margin-top: 7%;
+    }
+}
+
+/* Old Mobile Phones Wide Screens */
+@media (max-width: 360px) {
+}

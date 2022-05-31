@@ -1,0 +1,135 @@
+.row {
+    margin: 0px;
+}
+.col-lg-6 {
+    padding: 0px;
+}
+
+/* Header BG */
+#header .wrapper {
+    padding: 5%;
+    padding-top: 78px;
+    background-color: #002c6a;
+    color: white;
+    text-align: center;
+}
+
+#header .wrapper::after {
+    /* content: ""; */
+    width: 200%;
+    height: 200%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.1;
+}
+
+#header .wrapper::before {
+    /* content: ""; */
+    width: 200%;
+    height: 200%;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.1;
+}
+
+/* Poster */
+.poster-wrapper {
+    padding: 5%;
+}
+.poster {
+    width: 80%;
+    animation: up-down 2s ease-in-out infinite alternate-reverse;
+}
+@keyframes up-down {
+    from {
+        transform: translateY(-15px);
+    }
+    to {
+        transform: translateY(15px);
+    }
+}
+
+/* Main Heading - Typed Text*/
+.heading {
+    padding: 5% 0%;
+}
+.heading h1 {
+    text-align: left;
+    font-family: "Jost", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.break::after {
+    content: "\a";
+    white-space: pre;
+}
+.typed-text {
+    font-weight: 600;
+}
+#typed-strings {
+    display: none;
+}
+
+.heading h3 {
+    text-align: justify;
+    text-align-last: left;
+    font-family: "Jost", sans-serif;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tablet Wide Screens */
+@media (max-width: 992px) {
+    .poster {
+        width: 60%;
+    }
+    .heading h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .heading h3 {
+        text-align: justify;
+        text-align-last: center;
+    }
+}
+
+/* New Mobile Phones Wide Screens */
+@media (max-width: 428px) {
+    #header .wrapper {
+        padding: 7%;
+        padding-top: 78px;
+    }
+    .poster-wrapper {
+        padding: 7%;
+    }
+    .poster {
+        width: 90%;
+    }
+
+    .heading {
+        padding: 10% 0%;
+    }
+    .heading h1 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+    .heading h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Old Mobile Phones Wide Screens */
+@media (max-width: 360px) {
+}
