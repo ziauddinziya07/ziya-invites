@@ -11,6 +11,7 @@ function PortfolioSection(props) {
         setIsHomePage(true);
 
         $(".navbar").removeClass("nav-blue-bg");
+        // eslint-disable-next-line
     }, []);
 
     if (loadComplete) {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import {db} from "../firebase/firebase-config";
-import {set, ref} from "firebase/database";
+// import {db} from "../firebase/firebase-config";
+// import {set, ref} from "firebase/database";
 
 
 import $ from "jquery";
@@ -16,12 +16,10 @@ function NewCard(props) {
          */
         $(".navbar").addClass("nav-blue-bg");
         window.scrollTo(0, 0);
+        // eslint-disable-next-line
     }, []);
 
-    function submitData() {
-
-        
-    }
+    function submitData() {}
 
     return (
         <section id="new-card">
@@ -179,7 +177,12 @@ function NewCard(props) {
                     </div>
 
                     <div className="btn-wrapper">
-                        <button className="btn btn-primary" onClick={submitData}>Submit</button>
+                        <button
+                            className="btn btn-primary"
+                            onClick={submitData}
+                        >
+                            Submit
+                        </button>
                     </div>
                 </form>
             </div>

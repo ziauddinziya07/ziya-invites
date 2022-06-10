@@ -24,6 +24,7 @@ function Portfolio(props) {
                 if (i >= cardsList.length) clearInterval(interval);
             }, 700);
         }, 1000);
+        // eslint-disable-next-line
     }, []);
     return (
         <section id="portfolio">
