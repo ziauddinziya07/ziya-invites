@@ -28,6 +28,5 @@ yarn-error.log*
 /public/assets/thumbnails
 /public/cards.json
 
-/src/firebase
 
 /src/styles/Snippet.css

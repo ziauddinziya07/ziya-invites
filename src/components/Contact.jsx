@@ -33,6 +33,7 @@ function Contact(props) {
                             <h4>Ziya Invites</h4>
                         </Link>
                     )}
+                    <p>Launched on 31<sup>st</sup> May, 2022</p>
                     <p>Adoni, AP</p>
                     <p>India - 518301</p>
                     <br />
