@@ -1,34 +1,33 @@
 import React, { useEffect } from "react";
-import PortfolioItem from "./PortfolioItem";
-
 import { Link } from "react-router-dom";
-
+import PortfolioItem from "./PortfolioItem";
 import $ from "jquery";
-import "../styles/Portfolio.css";
+import "../styles/PortfolioSection.css";
 
-function Portfolio(props) {
-    const { setIsHomePage, cardsList } = props;
+function PortfolioSection(props) {
+    const { setIsHomePage, topCardsList, loadComplete } = props;
 
     useEffect(() => {
-        setIsHomePage(false);
-        /***
-         * Changing portfolio nav bg
-         */
-        $(".navbar").addClass("nav-blue-bg");
-        window.scrollTo(0, 0);
+        setIsHomePage(true);
+
+        $(".navbar").removeClass("nav-blue-bg");
+    }, []);
+
+    if (loadComplete) {
         setTimeout(() => {
             let i = 0;
             let interval = setInterval(() => {
                 $(".portfolio-item .logo-image").eq(i).addClass("hidden");
                 i++;
-                if (i >= cardsList.length) clearInterval(interval);
+                if (i >= topCardsList.length) clearInterval(interval);
             }, 700);
         }, 1000);
-    }, []);
+    }
+
     return (
-        <section id="portfolio">
-            <div className="portfolio-wrapper">
-                <div className="portfolio-header">
+        <section id="portfolio-section" data-aos="fade-up" data-aos-delay="300">
+            <div className="portfolio-section-wrapper">
+                <div className="portfolio-section-header">
                     <h2>PORTFOLIO</h2>
                     <p>
                         Have a look at our Portfolio, The following cards are
@@ -38,7 +37,7 @@ function Portfolio(props) {
                     </p>
                 </div>
                 <div className="row">
-                    {cardsList.map((card, index) => {
+                    {topCardsList.map((card, index) => {
                         return (
                             <PortfolioItem
                                 key={index}
@@ -49,13 +48,14 @@ function Portfolio(props) {
                             />
                         );
                     })}
+
                 </div>
-                <Link id="portfolio-link" className="button" to="/">
-                    Home
+                <Link id="portfolio-link" className="button" to="/portfolio">
+                    View More
                 </Link>
             </div>
         </section>
     );
 }
 
-export default Portfolio;
+export default PortfolioSection;

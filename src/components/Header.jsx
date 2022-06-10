@@ -18,6 +18,8 @@ function Header() {
         setTimeout(() => {
             typed.current = new Typed(typedElement.current, options);
         }, 2500);
+
+        
     }, []);
 
     return (

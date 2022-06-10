@@ -1,17 +1,17 @@
-#portfolio {
-    padding: 10% calc(5% - 20px) 5%;
+#portfolio-section {
+    padding: 5% calc(5% - 20px);
     box-shadow: 0px 2px 10px 0px rgba(128, 128, 128, 0.492);
     text-align: center;
 }
 
-.portfolio-header h2 {
+.portfolio-section-header h2 {
     color: #002c6a;
     margin-bottom: 20px;
     padding-bottom: 20px;
     font-weight: 700;
 }
 
-.portfolio-header h2::after {
+.portfolio-section-header h2::after {
     content: "";
     display: block;
     position: relative;
@@ -22,7 +22,7 @@
     background-color: #47b2e4;
 }
 
-.portfolio-header h2::before {
+.portfolio-section-header h2::before {
     content: "";
     display: block;
     position: relative;
@@ -33,14 +33,14 @@
     background-color: #ddd;
 }
 
-.portfolio-header p {
+.portfolio-section-header p {
     text-align: justify;
     text-align-last: center;
     margin: 0px;
     padding: 0px 20px;
 }
 
-#portfolio .button {
+#portfolio-section .button {
     text-decoration: none;
     display: inline-block;
     padding: 10px 20px;
@@ -53,7 +53,7 @@
     transition: all linear 400ms;
 }
 
-#portfolio .button:hover {
+#portfolio-section .button:hover {
     color: #002c6a;
     background-color: white;
 }
@@ -64,19 +64,29 @@
 
 /* New Mobile Phones Wide Screens */
 @media (max-width: 428px) {
-    #portfolio {
-        padding: 21% calc(12% - 20px) 7%;
+    #portfolio-section {
+        padding: 7%;
     }
 
-    .portfolio-header p {
-        padding: 0px;
+    .portfolio-section-header h2 {
+        font-size: 1.5rem;
     }
-    #portfolio .button {
+
+    .portfolio-section-header h2::before {
+        top: 46px;
+    }
+
+    .portfolio-section-header p {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #portfolio-section .button {
         font-weight: 400;
         margin-top: 7%;
     }
 
-    #portfolio .button:focus {
+    #portfolio-section .button:focus {
         font-weight: 600;
     }
 }

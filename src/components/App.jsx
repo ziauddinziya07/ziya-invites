@@ -1,24 +1,51 @@
-import "../styles/App.css";
-import Preloader from "./Preloader.jsx";
-import Pricing from "./Pricing";
-import Header from "./Header";
-import Navbar from "./Navbar";
-import { useEffect } from "react";
-import $ from "jquery";
-import Portfolio from "./Portfolio";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// Components
+import Preloader from "./Preloader.jsx";
+import Navbar from "./Navbar";
+import Main from "./Main";
+import Contact from "./Contact";
+import BackToTopBtn from "./BackToTopBtn";
+import Portfolio from "./Portfolio.jsx";
+import NewCard from "./NewCard.jsx";
+import $ from "jquery";
+
+// Firebase Realtime Database
+import { db } from "../firebase/firebase-config";
+import { ref, onValue } from "firebase/database";
+
+// Styles
 import AOS from "aos";
 import "aos/dist/aos.css";
-import BackToTopBtn from "./BackToTopBtn";
-import Contact from "./Contact";
+import "../styles/App.css";
 
 function App() {
+    const [isHomePage, setIsHomePage] = useState(false);
+    const [cardsList, setCardsList] = useState([]);
+    const [topCardsList, setTopCardsList] = useState([]);
+
+    const [loadComplete, setLoadComplete] = useState(false);
+
     useEffect(() => {
-        $(document).on("scroll", function () {
-            if (window.scrollY > 50) {
-                $(".navbar").addClass("nav-bg");
-            } else {
-                $(".navbar").removeClass("nav-bg");
+        onValue(ref(db), (snapshot) => {
+            if (snapshot.exists()) {
+                const obj = snapshot.val();
+                if (obj !== null) {
+                    const list = [];
+                    const topList = [];
+                    for (const key in obj) {
+                        list.push(obj[key]);
+                        if (obj[key].priority === "high" && topList.length <= 8)
+                            topList.push(obj[key]);
+                    }
+
+                    setLoadComplete(true);
+                    setCardsList(list);
+                    setTopCardsList(topList);
+                } else {
+                    console.log("No data is available");
+                }
             }
         });
     }, []);
@@ -36,13 +63,37 @@ function App() {
 
     return (
         <>
-            <Preloader />
-            <Navbar />
-            <Header />
-            <Portfolio />
-            <Pricing />
-            <Contact />
-            <BackToTopBtn />
+            <Router>
+                <Preloader />
+                <Navbar isHomePage={isHomePage} />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Main
+                                setIsHomePage={setIsHomePage}
+                                topCardsList={topCardsList}
+                                loadComplete={loadComplete}
+                            />
+                        }
+                    />
+                    <Route
+                        path="portfolio"
+                        element={
+                            <Portfolio
+                                setIsHomePage={setIsHomePage}
+                                cardsList={cardsList}
+                            />
+                        }
+                    />
+                    <Route
+                        path="new-card"
+                        element={<NewCard setIsHomePage={setIsHomePage} />}
+                    />
+                </Routes>
+                <Contact isHomePage={isHomePage} />
+                <BackToTopBtn />
+            </Router>
         </>
     );
 }

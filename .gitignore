@@ -25,5 +25,9 @@ yarn-error.log*
 
 # confidentials
 /public/assets/logo-ideas
+/public/assets/thumbnails
+/public/cards.json
 
+/src/firebase
 
+/src/styles/Snippet.css

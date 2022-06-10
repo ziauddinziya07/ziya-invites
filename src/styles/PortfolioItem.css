@@ -1,0 +1,54 @@
+.portfolio-item {
+    padding: 0px 20px;
+    margin-top: 5%;
+    transition: all ease-in-out 600ms;
+}
+
+.portfolio-item .prtfolio-item-wrapper {
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+}
+
+.portfolio-item .logo-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: opacity ease-in 600ms;
+    border-bottom: 1px solid white;
+}
+
+.portfolio-item .hidden {
+    opacity: 0;
+}
+
+.portfolio-item img {
+    width: 100%;
+}
+
+.portfolio-item h6 {
+    padding: 0.5rem 0px;
+    margin-bottom: 0px;
+    /* background-color: white;
+    color: #002c6a; */
+    color: white;
+    background-color: #002c6a;
+    position: relative;
+    z-index: -1;
+}
+
+/* Tablet Wide Screens */
+@media (max-width: 992px) {
+}
+
+/* New Mobile Phones Wide Screens */
+@media (max-width: 428px) {
+    .portfolio-item {
+        padding: 0px;
+        margin-top: 7%;
+    }
+}
+
+/* Old Mobile Phones Wide Screens */
+@media (max-width: 360px) {
+}

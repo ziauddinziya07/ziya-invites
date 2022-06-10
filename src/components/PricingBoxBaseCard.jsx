@@ -6,11 +6,15 @@ function    PricingBoxBaseCard(props) {
 
     const {delay } = props;
     return (
-        <div className="price-box col-lg-4" data-aos="fade-up" data-aos-delay={delay}>
+        <div
+            className="price-box col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay={delay}
+        >
             <div className="pricing-box-wrapper bordered-blue">
                 <h5>Base Card</h5>
                 <h3>
-                    <span className="currency-sign">₹</span>300
+                    <span className="currency-sign">₹</span>400
                     <span className="per-card">per card</span>
                 </h3>
                 <ul>
@@ -76,6 +80,13 @@ function    PricingBoxBaseCard(props) {
                             icon={faXmark}
                         />
                         <span>Phone and Whatsapp Support</span>
+                    </li>
+                    <li className="na">
+                        <FontAwesomeIcon
+                            className="tick-mark-icon"
+                            icon={faXmark}
+                        />
+                        <span>Invitor Dashboard</span>
                     </li>
                     <li className="na">
                         <FontAwesomeIcon

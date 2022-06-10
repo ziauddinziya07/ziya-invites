@@ -13,7 +13,7 @@ function PricingBoxProCard(props) {
             <div className="pricing-box-wrapper bordered-red">
                 <h5>Pro Card</h5>
                 <h3>
-                    <span className="currency-sign">₹</span>700
+                    <span className="currency-sign">₹</span>800
                     <span className="per-card">per card</span>
                 </h3>
                 <ul>
@@ -79,6 +79,13 @@ function PricingBoxProCard(props) {
                             icon={faCheck}
                         />
                         <span>Phone and Whatsapp Support</span>
+                    </li>
+                    <li >
+                        <FontAwesomeIcon
+                            className="tick-mark-icon"
+                            icon={faCheck}
+                        />
+                        <span>Invitor Dashboard</span>
                     </li>
                     <li>
                         <FontAwesomeIcon

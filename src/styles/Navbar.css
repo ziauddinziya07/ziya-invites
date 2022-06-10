@@ -10,7 +10,7 @@
     font-family: "Nunito", sans-serif;
 }
 
-.nav-bg {
+.nav-bg, .nav-blue-bg {
     background-color: #002c6ada;
 }
 
@@ -52,14 +52,16 @@
 }
 
 /* Navigation links laptop view */
-.navbar-nav .nav-item .nav-link {
+.navbar-nav .nav-item .nav-link,
+.navbar-nav .nav-item .home-link {
     color: white;
     transition: all 400ms linear;
     padding: 0px;
     margin-left: 1rem;
 }
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-item .nav-link:hover {
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .home-link:hover {
     color: #47b2e4;
 }
 
@@ -93,15 +95,17 @@
     margin: 0px 20px 10px;
 }
 
-.full-scrn-nav-content ul li a {
+.full-scrn-nav-content ul li a,
+.full-scrn-nav-content ul li .home-link {
     text-decoration: none;
     color: #002c6a;
     font-weight: 500;
     transition: all 400ms linear;
 }
 
+.full-scrn-nav-content ul li .home-link:hover,
 .full-scrn-nav-content ul li a:hover,
-.full-scrn-nav-content ul li.active a {
+.full-scrn-nav-content ul li a.active {
     color: #47b2e4;
 }
 

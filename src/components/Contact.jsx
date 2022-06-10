@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -10,7 +11,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "../styles/Contact.css";
 
-function Contact() {
+function Contact(props) {
+    const { isHomePage } = props;
     return (
         <section id="contact">
             <div className="contact-title">
@@ -22,9 +24,15 @@ function Contact() {
             </div>
             <div className="row">
                 <div className="col-lg-3 col-md-6 contact-tile">
-                    <a href="#header">
-                        <h4>Ziya Invites</h4>
-                    </a>
+                    {isHomePage ? (
+                        <a href="#header">
+                            <h4>Ziya Invites</h4>
+                        </a>
+                    ) : (
+                        <Link to="/">
+                            <h4>Ziya Invites</h4>
+                        </Link>
+                    )}
                     <p>Adoni, AP</p>
                     <p>India - 518301</p>
                     <br />
@@ -42,20 +50,35 @@ function Contact() {
                             <span className="icon">
                                 <FontAwesomeIcon icon={faAngleRight} />
                             </span>
-                            <a href="#header">Home</a>
+                            {isHomePage ? (
+                                <a href="#header">Home</a>
+                            ) : (
+                                <Link to="/">Home</Link>
+                            )}
                         </li>
                         <li>
                             <span className="icon">
                                 <FontAwesomeIcon icon={faAngleRight} />
                             </span>
-                            <a href="#portfolio">Portfolio</a>
+                            <a
+                                href={
+                                    isHomePage
+                                        ? "#portfolio-section"
+                                        : "#portfolio"
+                                }
+                            >
+                                Portfolio
+                            </a>
                         </li>
-                        <li>
-                            <span className="icon">
-                                <FontAwesomeIcon icon={faAngleRight} />
-                            </span>
-                            <a href="#pricing">Pricing</a>
-                        </li>
+
+                        {isHomePage && (
+                            <li>
+                                <span className="icon">
+                                    <FontAwesomeIcon icon={faAngleRight} />
+                                </span>
+                                <a href="#pricing">Pricing</a>
+                            </li>
+                        )}
                         <li>
                             <span className="icon">
                                 <FontAwesomeIcon icon={faAngleRight} />

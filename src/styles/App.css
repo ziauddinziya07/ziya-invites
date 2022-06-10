@@ -1,3 +1,16 @@
 .fixed {
     overflow: hidden;
 }
+
+/* Tablet Wide Screens */
+@media (max-width: 992px) {
+    
+}
+
+/* New Mobile Phones Wide Screens */
+@media (max-width: 428px) {
+}
+
+/* Old Mobile Phones Wide Screens */
+@media (max-width: 360px) {
+}

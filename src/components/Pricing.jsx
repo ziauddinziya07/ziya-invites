@@ -8,7 +8,7 @@ function Pricing() {
     return (
         <section id="pricing" data-aos="fade-up">
             <div className="pricing-wrapper">
-                <div className="pricing-title">
+                <div className="pricing-header">
                     <h2>PRICING</h2>
                     <p>
                         We have made three types of card services which have
